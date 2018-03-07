@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Taller</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script>
+        $(document).ready(function(){
+                $('#guardar').click(function(e){
+                  $.ajax({
+                      url:'./departServ',
+                      type:'post',
+                      data:$("#formulario").serialize(),
+                      success:function(result,estad,hrq){
+                          console.log(result);
+                      },
+                      error:function(err,status){
+                          console.log(status);
+                      }
+                  });
+                  e.preventDefault();
+                });
+            }) ;
+
+        </script>
+    </head>
+    <body>
+       <!-- <form id="FormEmpleados">
+            <table>
+                <h2>Registro de Empleados</h2>
+                <tr>
+                    <td>Id</td>
+                    <td><input type="text" id="id" name="id"></td>
+                </tr>
+                <tr>
+                    <td>Id Departamento</td>
+                    <td><input type="text" id="departamento" name="id_depart"></td>
+                </tr>
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" id="nombre" name="nombre"></td>
+                </tr>
+                <tr>
+                    <td>Salario</td>
+                    <td><input type="text" id="salario" name="salario"></td>
+                </tr>
+                <tr>
+                    <td>Fecha de ingreso</td>
+                    <td><input type="date" id="fecha_ingreso" name="fecha"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Guardar" name="guardar1" id="guardar"></td>
+                </tr>
+            </table>
+        </form>-->
+           <form id="formulario">
+            <table>
+                <tr>
+                    <td>Id</td>
+                    <td><input type="text" name="id" id="id"/></td>
+                </tr>
+                <tr>
+                    <td>Nombres</td>
+                    <td><input type="text" name="nombres" id="nombre"/></td>
+                </tr>
+                <tr>
+                    <td>localizacion</td>
+                    <td><input type="text" name="localizacion" id="localizacion"/></td>
+                </tr>
+                <tr>
+
+                    <td><button id='guardar'>Guardar</button></td>
+                    <td><input type="button" name="ver" value="Ver"/></td>
+                </tr>
+            </table>
+            </form>
+</body>
+</html>
