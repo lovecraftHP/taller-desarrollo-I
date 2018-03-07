@@ -17,7 +17,24 @@ and open the template in the editor.
                   $.ajax({
                       url:'./departServ',
                       type:'post',
-                      data:$("#formulario").serialize(),
+                      data:$("#form_dpt").serialize(),
+                      success:function(result,estad,hrq){
+                          console.log('Departamento Guardado');
+                      },
+                      error:function(err,status){
+                          console.log(status);
+                      }
+                  });
+                  e.preventDefault();
+                });
+            }) ;
+
+              $(document).ready(function(){
+                $('#guardar1').click(function(e){
+                  $.ajax({
+                      url:'./empleadoServ',
+                      type:'post',
+                      data:$("#form_emplea").serialize(),
                       success:function(result,estad,hrq){
                           console.log(result);
                       },
@@ -30,37 +47,39 @@ and open the template in the editor.
             }) ;
 
         </script>
+
     </head>
     <body>
-       <!-- <form id="FormEmpleados">
+       <form id="form_emplea">
             <table>
                 <h2>Registro de Empleados</h2>
                 <tr>
                     <td>Id</td>
-                    <td><input type="text" id="id" name="id"></td>
+                    <td><input type="text" name='id' id="id_user"></td>
                 </tr>
                 <tr>
                     <td>Id Departamento</td>
-                    <td><input type="text" id="departamento" name="id_depart"></td>
+                    <td><input type="text" name='departamento' id="departamento"></td>
                 </tr>
                 <tr>
                     <td>Nombre</td>
-                    <td><input type="text" id="nombre" name="nombre"></td>
+                    <td><input type="text" name='nombre' id="nombre_user"></td>
                 </tr>
                 <tr>
                     <td>Salario</td>
-                    <td><input type="text" id="salario" name="salario"></td>
+                    <td><input type="text" name="salario" id='salario' ></td>
                 </tr>
                 <tr>
                     <td>Fecha de ingreso</td>
-                    <td><input type="date" id="fecha_ingreso" name="fecha"></td>
+                    <td><input type="date" name='fecha_ingreso' id="fecha_ingreso"></td>
                 </tr>
                 <tr>
-                    <td><input type="submit" value="Guardar" name="guardar1" id="guardar"></td>
+                    <td><button id='guardar1'>Guardar</button></td>
                 </tr>
             </table>
-        </form>-->
-           <form id="formulario">
+        </form>
+        
+           <form id="form_dpt">
             <table>
                 <tr>
                     <td>Id</td>
@@ -68,16 +87,14 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <td>Nombres</td>
-                    <td><input type="text" name="nombres" id="nombre"/></td>
+                    <td><input type="text" name="nombre" id="nombre"/></td>
                 </tr>
                 <tr>
                     <td>localizacion</td>
                     <td><input type="text" name="localizacion" id="localizacion"/></td>
                 </tr>
                 <tr>
-
-                    <td><button id='guardar'>Guardar</button></td>
-                    <td><input type="button" name="ver" value="Ver"/></td>
+                    <td><button id='guardar'>Guardar</button></td>            
                 </tr>
             </table>
             </form>

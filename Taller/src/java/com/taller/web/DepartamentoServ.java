@@ -39,6 +39,7 @@ public class DepartamentoServ extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
             int id = new Integer(request.getParameter("id"));
             String nombre = request.getParameter("nombre");
             String localizacion = request.getParameter("localizacion");

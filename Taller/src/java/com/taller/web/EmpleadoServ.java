@@ -45,9 +45,9 @@ public class EmpleadoServ extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            int id = new Integer(request.getParameter("id"));
+            int id = new Integer(request.getParameter("id_user"));
             int id_depart = new Integer (request.getParameter("departamento"));
-            String nombre= request.getParameter("nombre");
+            String nombre= request.getParameter("nombre_user");
             float salario = new Float(request.getParameter("salario")) ;
             String fecha_ingreso = request.getParameter("fecha_ingreso");
             Date fecha = new Date();

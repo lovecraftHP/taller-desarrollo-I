@@ -32,7 +32,7 @@ public class DbConnect {
     public static void guardar_departamento(Departamentos d) throws ClassNotFoundException, SQLException{
         conectar();
         PreparedStatement pst = con.prepareStatement("Insert into "
-                + "contactos values(?,?,?)");
+                + "departamento values(?,?,?)");
         pst.setInt(1,d.getId() );
         pst.setString(2, d.getNombre());
         pst.setString(3, d.getLocalizacion());
