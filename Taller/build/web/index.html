@@ -45,12 +45,23 @@ and open the template in the editor.
                   e.preventDefault();
                 });
             }) ;
+            
 
         </script>
-
+ <script type="text/javascript">
+        function ver(f){
+            var hoy = new Date();
+            if (f.fecha.value<hoy.toISOString()) {
+                window.alert("no se puede ingresar una fecha menor a la de hoy");
+            } else {
+                console.log("Bien");
+            }
+        }
+    </script>
+    
     </head>
     <body>
-       <form id="form_emplea">
+        <form id="form_emplea" onsubmit="valida(this)">
             <table>
                 <h2>Registro de Empleados</h2>
                 <tr>
